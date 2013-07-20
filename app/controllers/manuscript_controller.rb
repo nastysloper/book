@@ -1,0 +1,2 @@
+class ManuscriptController < ApplicationController
+end
