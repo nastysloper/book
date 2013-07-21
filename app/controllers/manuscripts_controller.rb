@@ -8,13 +8,16 @@ class ManuscriptsController < ApplicationController
     @manuscript = Manuscript.find(params[:id])
   end
 
-  def remove
-    
+  def destroy
+    @manuscript = Manuscript.find(params[:id])
+    @manuscript.destroy
+
+    redirect_to manuscripts_path
   end
 
   def update
     @manuscript = Manuscript.find(params[:id])
-    if @manuscript.update(params[:manuscript])
+    if @manuscript.update_attributes(params[:manuscript])
       redirect_to(@manuscript)
     else
       render :edit

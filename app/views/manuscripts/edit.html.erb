@@ -1,29 +1,5 @@
 <h1>Editing manuscript</h1>
 
-<%= form_for :manuscript, url: manuscript_path(@manuscript.id), method: :patch do |f| %>
-  <% if @manuscript.errors.any? %>
-  <div id="errorExplanation">
-    <h2><%= pluralize(@manuscript.errors.count, "error") %> prohibited this manuscript from being saved:</h2>
-    <ul>
-    <% @manuscript.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-      <% end %>
-    </ul>
-  </div>
-  <% end %>
-  <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %><br>
-  </p>
+<%= render 'form' %>
 
-  <p>
-    <%= f.label :author %><br>
-    <%= f.text_field :author %>
-  </p>
-
-  <p>
-    <%= f.submit %>
-  </p>
-  <% end %>
-
-  <%= link_to 'Back', manuscripts_path %>
+<%= link_to 'Back', manuscripts_path %>
