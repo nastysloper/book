@@ -1,11 +1,11 @@
-<h1>Editing post</h1>
+<h1>Editing manuscript</h1>
 
-<%= form_for :post, url: { post_path(@post.id) }, method: :path do |f| %>
-  <% if @post.errors.any? %>
+<%= form_for :manuscript, url: manuscript_path(@manuscript.id), method: :patch do |f| %>
+  <% if @manuscript.errors.any? %>
   <div id="errorExplanation">
-    <h2><%= pluralize(@post.errors.count, "error") %> prohibited this manuscript from being saved:</h2>
+    <h2><%= pluralize(@manuscript.errors.count, "error") %> prohibited this manuscript from being saved:</h2>
     <ul>
-    <% @post.errors.full_messages.each do |msg| %>
+    <% @manuscript.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
       <% end %>
     </ul>
@@ -17,7 +17,7 @@
   </p>
 
   <p>
-    <%= f.label :author %>
+    <%= f.label :author %><br>
     <%= f.text_field :author %>
   </p>
 
@@ -26,4 +26,4 @@
   </p>
   <% end %>
 
-  <%= link_to 'Back', posts_path %>
+  <%= link_to 'Back', manuscripts_path %>
