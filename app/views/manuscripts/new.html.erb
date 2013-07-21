@@ -1,8 +1,22 @@
 <p>Enter your new manuscript</p>
 
 <%= form_for @manuscript, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
-  <%= f.text_field :title %>
-  <%= f.text_field :author %>
+
+<% if @manuscript.errors.any? %>
+<div id="errorExplanation">
+  <h2><%= pluralize(@manuscript.errors.count, "error") %> prohibit this manuscript from being saved:</h2>
+  <ul>
+    <% @manuscript.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+  <%= f.label "title" %><br>
+  <%= f.text_field :title %><br>
+  <%= f.label "author" %><br>
+  <%= f.text_field :author %><br>
   <%= f.submit "Create" %>
 <% end %>
 

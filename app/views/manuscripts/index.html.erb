@@ -11,17 +11,17 @@
     <th></th>
   </tr>
 
-  <% @books.each do |book| %>
+  <% @manuscript.each do |manuscript| %>
     <tr>
-      <td><%= book.title %></li>
-      <td><%= book.author %></li>
-      <td><%= link_to "Show", book %></td>
-      <td><%= link_to "Edit", edit_manuscript_path(book) %>
-      <td><%= link_to "Remove", book, method: :delete, data: { confirm: "Delete this entry?" } %></td>
+      <td><%= manuscript.title %></li>
+      <td><%= manuscript.author %></li>
+      <td><%= link_to "Show", manuscript %></td>
+      <td><%= link_to "Edit", edit_manuscript_path(manuscript) %>
+      <td><%= link_to "Remove", manuscript, method: :delete, data: { confirm: "Delete this entry?" } %></td>
     </tr>
   <% end %>
   </table>
 
   <br />
 
-  <%= link_to "New book", new_manuscript_path %>
+  <%= link_to "New manuscript", new_manuscript_path %>

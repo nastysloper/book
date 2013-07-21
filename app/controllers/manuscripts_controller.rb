@@ -1,11 +1,11 @@
 class ManuscriptsController < ApplicationController
 
   def index
-    @books = Manuscript.all
+    @manuscript = Manuscript.all
   end
 
   def edit
-    render index
+    @manuscript
   end
 
   def remove
