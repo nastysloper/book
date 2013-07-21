@@ -32,7 +32,7 @@ class ManuscriptsController < ApplicationController
   end
 
   def show
-    #@manuscript = 
+    @manuscript = Manuscript.find(params[:id])
   end
 
 end

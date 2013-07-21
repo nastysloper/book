@@ -11,6 +11,13 @@ Interesting I noticed that. It's a change with Rails 4, where there is added pro
 
 Another cool thing to notice: this only works with Rails 4.
 
+The next interesting part is redirect_to @manuscript
+This is a GET request that is called with an instance of the Manuscript class. It calls (by convention) the show action, which is to say the show route/view. I wonder what is sent in the params hash? Let's take a look!
+
+Bam! TypeError. Can't convert symbol into integer. Parameters came through as {"id" => "1"}, which is what I expected based on Rails conventions. I used the code from line 4. Maybe if I drop inspect it will work?
+Undefined method []= for nil.NilClass. Nope. Whatever. I know I'm getting a hash.
+
+
 Rails is a web-application framework that includes everything needed to create
 database-backed web applications according to the Model-View-Control pattern.
 
