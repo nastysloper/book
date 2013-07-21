@@ -17,6 +17,10 @@ This is a GET request that is called with an instance of the Manuscript class. I
 Bam! TypeError. Can't convert symbol into integer. Parameters came through as {"id" => "1"}, which is what I expected based on Rails conventions. I used the code from line 4. Maybe if I drop inspect it will work?
 Undefined method []= for nil.NilClass. Nope. Whatever. I know I'm getting a hash.
 
+render 'new'
+
+FOr reAl?
+
 
 Rails is a web-application framework that includes everything needed to create
 database-backed web applications according to the Model-View-Control pattern.

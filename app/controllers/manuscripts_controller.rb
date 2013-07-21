@@ -27,8 +27,11 @@ class ManuscriptsController < ApplicationController
   
   def create
     @manuscript = Manuscript.new(params[:manuscript])
-    @manuscript.save
-    redirect_to @manuscript
+    if @manuscript.save
+      redirect_to @manuscript
+    else
+      render 'new'
+    end
   end
 
   def show
