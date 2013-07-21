@@ -5,6 +5,12 @@ render :text, params[:manuscript].inspect
 where params[:manuscript] is the most interesting piece. I think this works
 because form_for specifies @manuscript.
 
+Then there's something new going on with a private method called post_params with a .require method and .permit. What's going on?
+
+Interesting I noticed that. It's a change with Rails 4, where there is added protection for mass-assignment of attributes. Cool thing to notice!
+
+Another cool thing to notice: this only works with Rails 4.
+
 Rails is a web-application framework that includes everything needed to create
 database-backed web applications according to the Model-View-Control pattern.
 
