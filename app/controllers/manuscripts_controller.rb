@@ -5,7 +5,7 @@ class ManuscriptsController < ApplicationController
   end
 
   def edit
-    @manuscript
+    @manuscript = Manuscript.find(params[:id])
   end
 
   def remove

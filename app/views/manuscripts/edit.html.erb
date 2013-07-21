@@ -1,0 +1,29 @@
+<h1>Editing post</h1>
+
+<%= form_for :post, url: { post_path(@post.id) }, method: :path do |f| %>
+  <% if @post.errors.any? %>
+  <div id="errorExplanation">
+    <h2><%= pluralize(@post.errors.count, "error") %> prohibited this manuscript from being saved:</h2>
+    <ul>
+    <% @post.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %><br>
+  </p>
+
+  <p>
+    <%= f.label :author %>
+    <%= f.text_field :author %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+  <% end %>
+
+  <%= link_to 'Back', posts_path %>
