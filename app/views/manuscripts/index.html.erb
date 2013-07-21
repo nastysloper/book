@@ -1,8 +1,27 @@
 <h1>You are in views/manuscript/index.html.erb!</h1>
 <p>How about that?<p>
   
-  <ul>Here is the list of books:</ul>
+  <h2>Here is the list of books</h2>
+  <table>
+  <tr>
+    <th>Title</th>
+    <th>Author</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
   <% @books.each do |book| %>
-  <li><%= book.title %></li>
-  <li><%= book.author %></li>
+    <tr>
+      <td><%= book.title %></li>
+      <td><%= book.author %></li>
+      <td><%= link_to "Show", book %></td>
+      <td><%= link_to "Edit", edit_manuscript_path(book) %>
+      <td><%= link_to "Remove", book, method: :delete, data: { confirm: "Delete this entry?" } %></td>
+    </tr>
   <% end %>
+  </table>
+
+  <br />
+
+  <%= link_to "New book", new_manuscript_path %>
