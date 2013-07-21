@@ -1,0 +1,24 @@
+<%= form_for @manuscript do |f| %>
+  <% if @manuscript.errors.any? %>
+  <div id="errorExplanation">
+    <h2><%= pluralize(@manuscript.errors.count, "error") %> prohibited this manuscript from being saved:</h2>
+    <ul>
+    <% @manuscript.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %><br>
+  </p>
+  <p>
+    <%= f.label :author %><br>
+    <%= f.text_field :author %><br>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+  <% end %>
