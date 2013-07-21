@@ -26,13 +26,19 @@ class ManuscriptsController < ApplicationController
   end
   
   def create
-    render text: params[:manuscript].inspect
+    #render text: params[:manuscript].inspect
+    @manuscript = Manuscript.new(post_params)
+    @post.save
+    redirect_to @post
   end
 
   def show
-    @manuscript = 
-    @manuscript.title = params[:title]
-    @manuscript.author = params[:author]
+    #@manuscript = 
   end
+
+  private
+    def post_params
+      params.require(:manuscript).permit(:title, :author)
+    end
 
 end

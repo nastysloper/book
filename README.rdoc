@@ -1,5 +1,10 @@
 == Welcome to Rails
 
+Interesting, params from the form came in as
+render :text, params[:manuscript].inspect
+where params[:manuscript] is the most interesting piece. I think this works
+because form_for specifies @manuscript.
+
 Rails is a web-application framework that includes everything needed to create
 database-backed web applications according to the Model-View-Control pattern.
 
