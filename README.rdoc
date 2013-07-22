@@ -48,8 +48,23 @@ run
 rake # => this runs your tests
 
 add a spec to the appropriate folder # =>
+spec/
+  models/ # model tests
+  controllers/ # controller tests
+  requests/ # capybara tests
+
 spec/models/manuscript_spec.rb
 run rake spec:model
+
+added factory girl gem to Gemfile.
+Create a file under a directory called factories:
+spec/factories/manuscripts.rb
+
+Seems there's a difference running rake and running rspec manuscript_spec.rb
+
+Nate says run rspec from the root directory of the project. In this case, the path will look like
+
+rspec spec/models/manuscript_spec.rb
 
 *************************************************
 
